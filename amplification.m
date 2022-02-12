@@ -1,5 +1,3 @@
-% This simple program consists of reading in three .wave files, combining them, and gradually amplifying the sound in guitar.wav
-
 clear;
 
 [bass, fs] = audioread('bass.wav');
@@ -13,10 +11,10 @@ d = drums(1:fs*duration);
 
 comp = b + g + d; 
 
-L = length(comp); % Length of the sound sequence 
-inc = 9/(L-1); % Increment
-w = 1:inc:10; % Gain from the first to last sample
-comp1 = b + w'.*g + d; % New signal with the gradually increasing gain in g
+L = length(comp); % 
+inc = 9/(L-1); 
+w = 1:inc:10; 
+comp1 = b + w'.*g + d;
 
 t = ((1:fs*duration)-1)/fs;
 sound(comp1, fs);
